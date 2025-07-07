@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  background: #222;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+#setup {
+  margin-top: 10px;
+}
+
+#nameInput {
+  padding: 8px;
+  font-size: 16px;
+}
+
+#joinBtn {
+  padding: 8px 16px;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+#gameContainer {
+  margin-top: 20px;
+  width: 90vw;
+  max-width: 600px;
+  height: 600px;
+  position: relative;
+}
+
+#circleStage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #444;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  overflow: hidden;
+}
+
+#player {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #0f0;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
