@@ -1,12 +1,13 @@
 // Firebase configuration - replace with your own
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  databaseURL: "YOUR_DB_URL",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDv0_wV_7U_akaYMCMmqIuZU7mFHu4oGv0",
+  authDomain: "firebullz-c5da5.firebaseapp.com",
+  databaseURL: "https://firebullz-c5da5-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "firebullz-c5da5",
+  storageBucket: "firebullz-c5da5.firebasestorage.app",
+  messagingSenderId: "209013988107",
+  appId: "1:209013988107:web:4f323d4f66bd167781200e",
+  measurementId: "G-ZTVNCF4BQ6"
 };
 
 // Initialize Firebase
