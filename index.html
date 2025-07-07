@@ -1,54 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Multiplayer WebSocket Client</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Firebase Battle Royale</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="menu">
+    <h1>🔥 Firebase Battle Royale</h1>
+    <input type="text" id="roomInput" placeholder="Enter room name" />
+    <input type="text" id="nicknameInput" placeholder="Enter nickname" />
+    <button id="createBtn">Create Room</button>
+    <button id="joinBtn">Join Room</button>
+  </div>
 
-<h1>Multiplayer Game</h1>
-<button id="createServerBtn">Create Server</button>
-<div id="status">Status: Not connected</div>
-<br/><br/>
-<input type="text" id="messageInput" placeholder="Type a message"/>
-<button id="sendBtn">Send</button>
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
 
-<script>
-  let socket;
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
 
-  document.getElementById('createServerBtn').addEventListener('click', () => {
-    // Connect to your WebSocket server
-    // Make sure your server is running at this address
-    socket = new WebSocket('wss://yourdomain.com:443');
-
-    socket.onopen = () => {
-      document.getElementById('status').innerText = 'Connected to server!';
-    };
-
-    socket.onmessage = (event) => {
-      alert('Message from server: ' + event.data);
-    };
-
-    socket.onclose = () => {
-      document.getElementById('status').innerText = 'Disconnected.';
-    };
-
-    socket.onerror = (error) => {
-      console.error('WebSocket error:', error);
-      document.getElementById('status').innerText = 'Error connecting.';
-    };
-  });
-
-  document.getElementById('sendBtn').addEventListener('click', () => {
-    const message = document.getElementById('messageInput').value;
-    if (socket && socket.readyState === WebSocket.OPEN) {
-      socket.send(message);
-    } else {
-      alert('Not connected to server.');
-    }
-  });
-</script>
-
+  <!-- Game Script -->
+  <script type="module" src="game.js"></script>
 </body>
 </html>
