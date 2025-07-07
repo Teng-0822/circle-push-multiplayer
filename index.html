@@ -1,31 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Firebase Battle Royale</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Sumo Multiplayer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+    #gameCanvas {
+      background: #fff;
+      display: block;
+    }
+    #lobby {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 10;
+    }
+    #leftJoystick, #rightJoystick {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.2);
+      bottom: 20px;
+    }
+    #leftJoystick {
+      left: 20px;
+    }
+    #rightJoystick {
+      right: 20px;
+    }
+  </style>
 </head>
 <body>
-  <div id="menu">
-    <h1>🔥 Firebase Battle Royale</h1>
-    <input type="text" id="roomInput" placeholder="Enter room name" />
-    <input type="text" id="nicknameInput" placeholder="Enter nickname" />
-    <button id="createBtn">Create Room</button>
-    <button id="joinBtn">Join Room</button>
+  <div id="lobby">
+    <input type="text" id="nickname" placeholder="Nickname"><br><br>
+    <input type="text" id="room" placeholder="Room Name"><br><br>
+    <button id="joinBtn">Join Game</button>
   </div>
 
   <canvas id="gameCanvas" width="800" height="600"></canvas>
+  <div id="leftJoystick"></div>
+  <div id="rightJoystick"></div>
 
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
-  
-  <div id="joystick-container">
-    <div id="left-joystick" class="joystick"></div>
-    <div id="right-joystick" class="joystick"></div>
-  </div>
-  <!-- Game Script -->
   <script type="module" src="game.js"></script>
 </body>
 </html>
