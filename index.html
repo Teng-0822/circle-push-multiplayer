@@ -20,7 +20,7 @@
   document.getElementById('createServerBtn').addEventListener('click', () => {
     // Connect to your WebSocket server
     // Make sure your server is running at this address
-    socket = new WebSocket('ws://localhost:8080');
+    socket = new WebSocket('wss://yourdomain.com:443');
 
     socket.onopen = () => {
       document.getElementById('status').innerText = 'Connected to server!';
